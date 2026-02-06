@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#efece6"/>
+  <text x="26" y="48" font-family="Georgia, serif" font-size="36" fill="#6b7cff" text-anchor="middle">&#936;</text>
+  <text x="46" y="34" font-family="Georgia, serif" font-size="20" fill="#6b7cff" text-anchor="middle">&#x2020;</text>
+</svg>
