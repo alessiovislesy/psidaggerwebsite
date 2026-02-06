@@ -25,31 +25,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="corner-row">
-    <img class="corner-img img-1" src="images/nucleic.png" alt="DNA helix">
-    <img class="corner-img img-2" src="images/Nucleic (1).png" alt="Peptide structure">
-  </header>
+  <main class="split-layout">
+    <div class="video-left">
+      <video autoplay muted loop playsinline>
+        <source src="Video/second_video.mp4" type="video/mp4">
+      </video>
+    </div>
 
-  <main class="hero">
-    <p class="tagline">
-      We will be the one-stop-shop for all polymer engineering&mdash;we
-      will make better-performing polymers much faster, outcompeting
-      incumbents across multiple industries
-    </p>
+    <div class="content-right">
+      <p class="tagline">
+        We will be the one-stop-shop for all polymer engineering&mdash;we
+        will make better-performing polymers much faster, outcompeting
+        incumbents across multiple industries
+      </p>
 
-    <hr class="rule">
-    <h1 class="title">PsiDagger</h1>
-    <hr class="rule">
+      <hr class="rule">
 
-    <p class="coming-soon">coming soon...</p>
+      <div class="ball-video">
+        <video autoplay muted loop playsinline>
+          <source src="Video/first_video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <h1 class="title">PsiDagger</h1>
+
+      <hr class="rule">
+
+      <p class="coming-soon">coming soon...</p>
+    </div>
   </main>
 
-  <footer class="corner-row corner-bottom">
-    <img class="corner-img img-3" src="images/SurfactantandWater.png" alt="Surfactant and water">
-    <div class="logo">
-      <span class="logo-icon">&Psi;<sup>&dagger;</sup></span>
-      <span class="logo-text">PSI<strong>DAGGER</strong></span>
-    </div>
-  </footer>
+  <div class="logo">
+    <span class="logo-icon">&Psi;<sup>&dagger;</sup></span>
+    <span class="logo-text">PSI<strong>DAGGER</strong></span>
+  </div>
 </body>
 </html>

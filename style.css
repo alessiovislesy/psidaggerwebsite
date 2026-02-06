@@ -8,94 +8,77 @@
 
 html, body {
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
   font-family: "Georgia", "Times New Roman", serif;
   background-color: #efece6;
   color: #1a1a1a;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
-  overflow: hidden;
 }
 
-/* ── Corner rows ── */
+/* ── Split layout ── */
 
-.corner-row {
-  position: relative;
-  height: clamp(40px, 6vh, 80px);
-  flex-shrink: 0;
-  width: 100%;
-}
-
-.corner-bottom {
+.split-layout {
   display: flex;
-  align-items: flex-end;
+  height: 100vh;
 }
 
-.corner-img {
-  position: absolute;
-  width: clamp(120px, 22vw, 280px);
-  height: auto;
+/* ── Left side: big polymer video ── */
+
+.video-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
 }
 
-.corner-row:first-child .corner-img:first-child {
-  top: 0;
-  left: 0;
-  margin: -2rem;
+.video-left video {
+  height: 90vh;
+  width: auto;
+  object-fit: contain;
+  /* Let it bleed off the left edge for dramatic effect */
+  margin-left: -5vw;
 }
 
-.corner-row:first-child .corner-img:last-child {
-  top: 0;
-  right: 0;
-  margin: -2rem;
-}
+/* ── Right side: ball video + text ── */
 
-.corner-bottom .corner-img {
-  bottom: 0;
-  left: 0;
-  margin: -2rem;
-}
-
-.img-1 {
-  width: clamp(140px, 26vw, 320px);
-  transform: rotate(45deg);
-}
-
-.img-2 {
-  width: clamp(140px, 26vw, 320px);
-  transform: rotate(180deg);
-}
-
-.img-3 {
-  transform: rotate(45deg);
-}
-
-/* ── Hero section ── */
-
-.hero {
+.content-right {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 2rem 4rem 3.5rem 2rem;
+  text-align: right;
+}
+
+/* ── Ball video (small molecule) ── */
+
+.ball-video {
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
+  max-width: 500px;
+}
+
+.ball-video video {
+  width: clamp(120px, 18vw, 280px);
+  height: auto;
+  object-fit: contain;
 }
 
 /* ── Tagline ── */
 
 .tagline {
   font-style: italic;
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1.6;
-  max-width: 640px;
-  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-bottom: 2rem;
   color: #2a2a2a;
 }
 
@@ -106,60 +89,39 @@ body {
   height: 3px;
   background-color: #1a1a1a;
   width: 100%;
-  max-width: 620px;
+  max-width: 500px;
 }
 
 /* ── Title ── */
 
 .title {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 9rem;
+  font-size: clamp(3.5rem, 9vw, 10rem);
   font-weight: 400;
   color: #6b7cff;
   letter-spacing: 0.02em;
   padding: 0.6rem 0;
 }
 
-/* ── Presenter info ── */
-
-.presenter {
-  margin-top: 2.5rem;
-  text-align: center;
-  line-height: 1.7;
-}
-
-.presented-by {
-  font-style: italic;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.name {
-  font-size: 1.05rem;
-}
-
-.location {
-  font-size: 1.05rem;
-}
-
 /* ── Coming soon ── */
 
 .coming-soon {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-style: italic;
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 3.5vw, 4rem);
   color: #1a1a1a;
   letter-spacing: 0.05em;
 }
 
-/* ── Footer / Logo ── */
-
+/* ── Logo ── */
 
 .logo {
+  position: fixed;
+  bottom: 0.8rem;
+  right: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-left: auto;
   padding: 0.5rem;
 }
 
@@ -183,16 +145,44 @@ body {
 
 /* ── Responsive ── */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .split-layout {
+    flex-direction: column;
+  }
+
+  .content-right {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    order: -1;
+  }
+
+  .ball-video {
+    justify-content: center;
+  }
+
+  .ball-video video {
+    width: 140px;
+  }
+
+  .video-left {
+    justify-content: center;
+  }
+
+  .video-left video {
+    height: 40vh;
+    margin-left: 0;
+  }
+
   .title {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .tagline {
     font-size: 1rem;
   }
 
-  .hero {
-    padding: 3rem 1.5rem 1.5rem;
+  .coming-soon {
+    font-size: 1.5rem;
   }
 }
