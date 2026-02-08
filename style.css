@@ -75,7 +75,7 @@ body {
 }
 
 .contact-heading {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 400;
   margin-bottom: 1.5rem;
